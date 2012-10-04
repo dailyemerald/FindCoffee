@@ -5,6 +5,8 @@ L.tileLayer('http://{s}.tile.cloudmade.com/03d6cb9913264bbbb3c57e37530f5b84/997/
     detectRetina: true
 }).addTo(window.map);
 
+window.marker_lookup = {};
+
 function onLocationFound(e) {
     var radius = e.accuracy / 2;
     window.user_location = e;
@@ -26,11 +28,15 @@ var compile_templates = function() {
 }
 
 var add_marker_to_map = function(coffeeshop) {
-  console.log("marker added:", L.marker([coffeeshop.lat, coffeeshop.lng]).addTo(window.map).bindPopup("<b>"+coffeeshop.name+"</b><br>"+coffeeshop.rating+"<br>"+coffeeshop.address));
+  window.marker_lookup[coffeeshop.id] = L.marker([coffeeshop.lat, coffeeshop.lng]).addTo(window.map).bindPopup("<b>"+coffeeshop.name+"</b><br>"+coffeeshop.rating+"<br>"+coffeeshop.address);
 }
 
 var format_phone_number = function(phone) {
-  return "(" + phone.substring(0,3) + ") "+ phone.substring(3,6) + "-" + phone.substring(6,10);
+  try {
+    return "(" + phone.substring(0,3) + ") "+ phone.substring(3,6) + "-" + phone.substring(6,10);
+  } catch (e) {
+    return "";
+  }
 }
 
 var setup_coffee_shops = function() {
@@ -38,6 +44,7 @@ var setup_coffee_shops = function() {
   coffee_data.businesses.forEach(function(coffeeshop) {
     console.log(coffeeshop)
     var d = {
+      id: coffeeshop.id,
       name: coffeeshop.name,
       thumbnail: coffeeshop.image_url,
       rating: coffeeshop.rating,
@@ -59,4 +66,8 @@ var setup_coffee_shops = function() {
 $(document).ready(function() {
   compile_templates();
   setup_coffee_shops();
+  $(".shop").on('click', function() {
+    var marker = window.marker_lookup[ $(this).attr("id") ];
+    marker.openPopup();
+  });
 });
