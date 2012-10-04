@@ -296,3 +296,9 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+
+
+#map {
+  height: 200px;
+}
