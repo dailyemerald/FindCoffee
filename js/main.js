@@ -1,8 +1,7 @@
 // setup the map!
 window.map = L.map('map');
 L.tileLayer('http://{s}.tile.cloudmade.com/03d6cb9913264bbbb3c57e37530f5b84/997/256/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-    maxZoom: 18,
+    maxZoom: 16,
     detectRetina: true
 }).addTo(window.map);
 
