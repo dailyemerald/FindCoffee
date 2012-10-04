@@ -40,13 +40,15 @@ var setup_coffee_shops = function() {
     var d = {
       name: coffeeshop.name,
       thumbnail: coffeeshop.image_url,
-      rating: coffeeshop.rating + " / 5 ("+coffeeshop.review_count+" reviews)",
+      rating: coffeeshop.rating,
+      cssrating: coffeeshop.rating.toString().replace(".",""),
       address: coffeeshop.location.display_address[0],
       distance: "0 miles",
       lat: coffeeshop.location.coordinate.latitude,
       lng: coffeeshop.location.coordinate.longitude,
       phone: format_phone_number(coffeeshop.phone)
     }
+    console.log(d)
     $("#coffee-shops").append( window.shopTpl(d) );
     
     add_marker_to_map(d);
