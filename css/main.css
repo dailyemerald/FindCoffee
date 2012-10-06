@@ -21,6 +21,8 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
+    font-family: "proxima-nova", helvetica, sans-serif;
+    font-weight: 300;
 }
 
 /*
@@ -90,26 +92,80 @@ textarea {
 }
 
 
+/* HEADER
+----------------------------------------------- */
+header h1 {
+  background: black;
+  height: 51px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+
 /* MAP
 ----------------------------------------------- */
 #map {
   float: left;
+  height: 100%;
   width: 75%;
+}
+
+.leaflet-top {
+  top: 60px;
 }
 
 /* ASIDE
 ----------------------------------------------- */
 #coffee-shops {
   float: left;
-  background: #DDD;
-  width: 20%;
+  height: 100%;
+  list-style: none;
+  margin: 0 0 -51px 0;
+  overflow: scroll;
+  padding: 51px 0 0 0;
+  position: relative;
+  width: 25%;
+  
+  
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, .6);
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, .6);
+  -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, .6);
 }
 
+#coffee-shops li {
+  background: #f2f0eb;
+  border-bottom: 1px dotted #ddd;
+  padding: 0px 0 12px 5%;
+}
 
+#coffee-shops li:hover {
+  background: #65bcca;
+}
 
+#coffee-shops li:hover a, #coffee-shops li:hover h2, #coffee-shops li:hover p {
+  color: #fff;
+}
 
+#coffee-shops h2 {
+  display: inline-block;
+  margin: 0;
+}
 
+#coffee-shops h2 a {
+  color: #3e3e3e;
+  font-size: 14px;
+  text-decoration: none;
+}
 
+#coffee-shops p {
+  color: #868686;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+}
 
 
 
@@ -301,10 +357,4 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
-}
-
-
-
-#map {
-  height: 200px;
 }

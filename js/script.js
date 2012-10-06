@@ -70,4 +70,19 @@ $(document).ready(function() {
     var marker = window.marker_lookup[ $(this).attr("id") ];
     marker.openPopup();
   });
+  
+  // Full Height
+  if ($(window).height() > 480 ) {
+    var winHeight = $(window).height();
+    $("#wrapper").css("height", winHeight);
+    $("#coffee-shops").css("height", winHeight - 51);
+   
+    // On window resize
+    $(window).resize(function() {
+      var winHeight = $(window).height();
+      $("#wrapper").css("height", winHeight);
+      $("#coffee-shops").css("height", winHeight - 51);
+    });
+  }
+  
 });
