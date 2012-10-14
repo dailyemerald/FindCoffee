@@ -72,7 +72,7 @@ $(document).ready(function() {
   });
   
   // Full Height
-  if ($(window).height() > 480 ) {
+  if ($(window).height() > 568 ) {
     var winHeight = $(window).height();
     $("#wrapper").css("height", winHeight);
     $("#coffee-shops").css("height", winHeight - 51);
