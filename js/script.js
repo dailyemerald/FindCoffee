@@ -86,3 +86,8 @@ $(document).ready(function() {
   }
   
 });
+
+// Hides the browser's top bar
+/mobile/i.test(navigator.userAgent) && setTimeout(function () {
+  window.scrollTo(0, 1);
+}, 1000);
