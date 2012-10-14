@@ -147,6 +147,36 @@ textarea {
 
 
 
+@media only screen and (max-width: 480px) {
+  header h1 {
+    background: #000;
+    height: 44px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;  
+  }
+  
+  
+  #map {
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    float: left;
+    height: 176px;
+    position: fixed;
+    top: 44px;
+    width: 100%;
+    z-index: 9;
+  }
+
+  #coffee-shops {
+    padding-top : 220px;
+  }
+
+}
+
 
 @media only screen and (min-width: 568px) {
 
