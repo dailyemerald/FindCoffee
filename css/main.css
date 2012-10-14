@@ -170,6 +170,10 @@ textarea {
     width: 100%;
     z-index: 9;
   }
+  
+  .leaflet-control-container {
+    display: none;
+  }
 
   #coffee-shops {
     padding-top : 220px;
